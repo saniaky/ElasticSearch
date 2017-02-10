@@ -1,0 +1,37 @@
+# http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+############ EMBEDDED SERVER CONFIGURATION ############
+server:
+  port: 9005
+  contextPath: /
+
+logging:
+  #file: logs.txt
+  level:
+     com.saniaky: DEBUG
+     org.springframework: INFO
+     org.springframework.jdbc: INFO
+     org.springframework.cache: INFO
+     org.hibernate: INFO
+     org.hibernate.SQL: INFO
+     org.hibernate.type.descriptor.sql.BasicBinder: INFO
+
+
+############ SPRING CONFIGURATION ############
+spring:
+
+  #### Database ####
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&characterEncoding=utf8
+    username: root
+    password: 111
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+    properties:
+          hibernate:
+            show_sql: true
+            format_sql: true
+#            dialect: org.hibernate.dialect.MySQLInnoDBDialect
