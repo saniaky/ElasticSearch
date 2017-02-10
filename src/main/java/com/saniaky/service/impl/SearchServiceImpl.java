@@ -39,7 +39,7 @@ public class SearchServiceImpl implements SearchService {
         SearchResponse response = client.prepareSearch(ElasticSearchConst.userIndex)
                 .setTypes(ElasticSearchConst.userType)
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.termQuery("username", "saniaky"))
+                .setQuery(QueryBuilders.termQuery("username", username))
                 .setFrom(0).setSize(1).setExplain(true)
                 .execute()
                 .actionGet();
